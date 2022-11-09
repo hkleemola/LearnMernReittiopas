@@ -128,7 +128,7 @@ function LisaaReitti() {
           <label for="melonta"> melontaan</label><br></br>
           <input type="checkbox" id="pyoraily" name="pyoraily" value="pyoraily"></input>
           <label for="pyoraily"> pyöräilyyn</label><br></br>
-          <input type="checkbox" id="vaellus" name="vaellus" value="aellus"></input>
+          <input type="checkbox" id="vaellus" name="vaellus" value="vaellus"></input>
           <label for="vaellus"> vaellukseen</label><br></br><br></br>
           {/* <input type="submit" value="Submit"></input> */}
         </form>
