@@ -38,11 +38,11 @@ const luoReitti = asyncHandler(async (req, res) => {
   }
 
   const reitti = await Reitti.create({
-    // nää uusiksi!!!!
     nimi: req.body.nimi,
     pituus: req.body.pituus,
     kuvaus: req.body.kuvaus,
     user: req.user.id,
+    reittityypit: {melonta: req.body.melonta, pyoraily: req.body.pyoraily, vaellus: req.body.vaellus},
   })
 
   res.status(200).json(reitti)
@@ -66,7 +66,7 @@ const paivitaReitti = asyncHandler(async (req, res) => {
   }
 
   // make sure the logged in user matches the reitti user
-  if(goal.user.toString() !== req.user.id){
+  if(reitti.user.toString() !== req.user.id){
     res.status(401)
     throw new Error('Käyttäjällä ei ole valtuuksia')   
   }
